@@ -5,7 +5,7 @@ on:
     branches:
       - '**'
     tags:
-      - 'v*.*.*'
+      - '[0-9]+.[0-9]+.[0-9]+'
   schedule:
     - cron: 1 22 * * *
 
@@ -45,9 +45,9 @@ jobs:
             type=edge
             type=ref,event=tag
             type=ref,event=branch
-            type=semver,pattern=v{{version}}
-            type=semver,pattern=v{{major}}.{{minor}}
-            type=semver,pattern=v{{major}}
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
             type=sha
 
       # - name: Login to DockerHub
