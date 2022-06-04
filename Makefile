@@ -11,11 +11,11 @@ run: .build
 	@docker run ${REPO_NAME}
 
 .PHONY: build
-build: .build
+build: .build_done
 
-.build: Dockerfile
+.build_done: Dockerfile
 	docker build . -t ${REPO_NAME}
-	touch .build
+	touch .build_done
 
 .PHONY: test
 test:
@@ -24,4 +24,4 @@ test:
 
 .PHONY: clean
 clean:
-	rm .build
+	rm .build_done
