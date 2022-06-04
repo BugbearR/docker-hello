@@ -4,10 +4,10 @@ REGISTRY=ghcr.io
 REPO_NAME=${REGISTRY}/${USER_NAME}/${IMAGE_NAME}
 
 .PHONY: all
-all: .build
+all: .build_done
 
 .PHONY: run 
-run: .build
+run: .build_done
 	@docker run ${REPO_NAME}
 
 .PHONY: build
