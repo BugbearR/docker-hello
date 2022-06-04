@@ -1,8 +1,0 @@
-name: GitHub Actions Hello, world!
-on: [push]
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello, world!"
-
