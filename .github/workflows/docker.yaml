@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_and_push:
-    name: Build and Push
+    name: Build_and_Push
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
