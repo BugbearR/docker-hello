@@ -2,6 +2,9 @@ name: Build and Push and Test
 
 on:
   push:
+    paths:
+      - Dockerfile
+      - .github/workflows/docker.yaml
     branches:
       - '**'
     tags:
