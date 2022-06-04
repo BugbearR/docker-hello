@@ -22,6 +22,11 @@ test:
 	docker run ${REPO_NAME} >/tmp/result.txt
 	diff /tmp/result.txt expected.txt
 
+.PHONY: test-edge
+test-edge:
+	docker run ${REPO_NAME}:edge >/tmp/result.txt
+	diff /tmp/result.txt expected.txt
+
 .PHONY: clean
 clean:
 	rm .build_done

@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - Dockerfile
+      - Makefile
       - .github/workflows/docker.yaml
     branches:
       - '**'
@@ -88,4 +89,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Test
-        run: make test
+        run: make test-edge
