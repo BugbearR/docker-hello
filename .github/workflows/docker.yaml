@@ -45,7 +45,7 @@ jobs:
           images: ghcr.io/bugbearr/hello
           tags: |
             type=schedule
-            type=schedule,pattern={{date 'YYYYMMDD[T]HHmmssZZ'}}
+            type=schedule,pattern={{date 'YYYYMMDD[T]HHmm[Z]'}}
             type=edge
             type=ref,event=tag
             type=ref,event=branch
