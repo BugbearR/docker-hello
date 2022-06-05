@@ -19,13 +19,19 @@ build: .build_done
 
 .PHONY: test
 test:
-	docker run ${REPO_NAME} >/tmp/result.txt
+	-docker stop test-${IMAGE_NAME}
+	-docker rm test-${IMAGE_NAME}
+	docker run --name test-${IMAGE_NAME} ${REPO_NAME} >/tmp/result.txt
 	diff /tmp/result.txt expected.txt
+	-docker rm test-${IMAGE_NAME}
 
 .PHONY: test-edge
 test-edge:
-	docker run ${REPO_NAME}:edge >/tmp/result.txt
+	-docker stop test-${IMAGE_NAME}
+	-docker rm test-${IMAGE_NAME}
+	docker run --name test-${IMAGE_NAME} ${REPO_NAME}:edge >/tmp/result.txt
 	diff /tmp/result.txt expected.txt
+	-docker rm test-${IMAGE_NAME}
 
 .PHONY: clean
 clean:
